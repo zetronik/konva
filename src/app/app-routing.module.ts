@@ -15,7 +15,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'chart',
+    redirectTo: 'konva',
     pathMatch: 'full',
   }
 ];
