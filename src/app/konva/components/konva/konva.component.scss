@@ -1,0 +1,89 @@
+body {
+  padding: 0;
+}
+
+.konva {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &__control {
+    width: 40px;
+    height: 248px;
+    padding: 4px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 24px;
+    top: calc(50% - 248px/2 - 16px);
+    z-index: 1;
+    background: #14181F;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-divider {
+      width: 24px;
+      height: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 3px 0 4px;
+    }
+  }
+
+  &__container {
+    height: 100%;
+    width: auto;
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+}
+
+.konva-button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover, &.active {
+    background: #2d2e32;
+  }
+
+  .konva-icon {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &__message {
+      background-image: url("/assets/mesage.svg");
+    }
+
+    &__arrow {
+      background-image: url("/assets/arrow.svg");
+    }
+
+    &__line {
+      background-image: url("/assets/line.svg");
+    }
+
+    &__square {
+      background-image: url("/assets/square.svg");
+    }
+
+    &__circle {
+      background-image: url("/assets/circle.svg");
+    }
+
+    &__pencil {
+      background-image: url("/assets/pencil.svg");
+    }
+
+    &__undo {
+      background-image: url("/assets/undo.svg");
+    }
+  }
+}

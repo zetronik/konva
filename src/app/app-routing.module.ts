@@ -1,30 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChartModule } from "./chart/chart.module";
+import { KonvaModule } from "./konva/konva.module";
 
-import { BuyersComponent } from './components/buyers/buyers.component';
-import { ProjectUsersComponent } from './users.component';
 
 export const routes: Routes = [
   {
-    path: 'view',
-    component: ProjectUsersComponent,
-    children: [
-      {
-        path: 'buyers',
-        component: BuyersComponent,
-      },
-      {
-        path: '**',
-        redirectTo: 'buyers',
-        pathMatch: 'full',
-      },
-    ],
+    path: 'konva',
+    loadChildren: (): Promise<KonvaModule> => import('./konva/konva.module').then(m => m.KonvaModule),
   },
+  {
+    path: 'chart',
+    loadChildren: (): Promise<ChartModule> => import('./chart/chart.module').then(m => m.ChartModule)
+  },
+  {
+    path: '',
+    redirectTo: 'chart',
+    pathMatch: 'full',
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [],
 })
-export class UsersRoutingModule {}
+export class AppRoutingModule {}

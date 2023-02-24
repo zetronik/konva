@@ -1,1 +1,14 @@
-<p>chart works!</p>
+<div class="chart">
+  <div id="legend"></div>
+  <canvas
+    #canvas
+    baseChart
+    class="chart"
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [type]="lineChartType"
+    [plugins]="lineChartPlugins"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)">
+  </canvas>
+</div>
