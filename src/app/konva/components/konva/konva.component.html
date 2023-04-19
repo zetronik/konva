@@ -1,64 +1,8 @@
-<div class="konva">
-  <div class="konva__control">
-    <div class="konva-button">
-      <span class="konva-icon konva-icon__message"></span>
-    </div>
-    <div class="konva__control-divider"></div>
-    <div
-      class="konva-button"
-      (click)="setSelection(controlButton.Arrow)"
-      [class.active]="selectedButton[controlButton.Arrow]"
-    >
-      <span class="konva-icon konva-icon__arrow"></span>
-    </div>
-    <div
-      class="konva-button"
-      (click)="setSelection(controlButton.Line)"
-      [class.active]="selectedButton[controlButton.Line]"
-    >
-      <span class="konva-icon konva-icon__line"></span>
-    </div>
-    <div
-      class="konva-button"
-      (click)="setSelection(controlButton.Square)"
-      [class.active]="selectedButton[controlButton.Square]"
-    >
-      <span class="konva-icon konva-icon__square"></span>
-    </div>
-    <div
-      class="konva-button"
-      (click)="setSelection(controlButton.Circle)"
-      [class.active]="selectedButton[controlButton.Circle]"
-    >
-      <span class="konva-icon konva-icon__circle"></span>
-    </div>
-    <div
-      class="konva-button"
-      (click)="setSelection(controlButton.Pencil)"
-      [class.active]="selectedButton[controlButton.Pencil]"
-    >
-      <span class="konva-icon konva-icon__pencil"></span>
-    </div>
-    <div class="konva__control-divider"></div>
-    <div
-      class="konva-button"
-      (click)='undo()'
-    >
-      <span class="konva-icon konva-icon__undo"></span>
-    </div>
-    <div
-      class="konva-button"
-      (click)='saveAsImage()'
-      style="color: white"
-    >
-      S
-    </div>
-  </div>
-  <div
-    #konvaContainer
-    id="konva-container"
-    class="konva__container"
-    [ngClass]="getCursorClass"
-    [ngStyle]="{'background-image': 'url(' + background + ')'}"
-  ></div>
-</div>
+<ngx-file-drop
+  (onFileDrop)="drop($event)"
+  [directory]="false"
+  [multiple]="true"
+  [accept]="accept"
+  [showBrowseBtn]="true"
+>
+</ngx-file-drop>
